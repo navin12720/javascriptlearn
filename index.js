@@ -136,4 +136,43 @@ console.log(clone4);
 //json.parse(),json.stringify()
 let clone5=JSON.parse(JSON.stringify(arrayorginal));
 console.log(clone5);
+//------------different way to create objects------------
+//1.object literal notation
+let users={
+  name:"navin",
+  age:20,
+  place:"chennai",
+  about:function(){
+    return `this is ${this.name} from ${this.place}`
+  },
+  eligiblity:function(){
+    return this.age>=18;
+  }
+};
+console.table(users);
+console.log(users.about());
+ //-----for many objects----------
+ //2.prototype inheritence
+ const studentmethod={
+  about:function(){
+    return `this is ${this.name} from ${this.city}`
+  },
+  eligiblity:function(){
+    return this.age>=18;
+  }
+ };
+
+ function addstudent(name,age,father,address,city){
+  const user=Object.create(studentmethod);
+  user.name=name;
+  user.age=age;
+  user.father=father;
+  user.address=address;
+  user.city=city;
+  // user.about=studentmethod.about;
+  // user.eligiblity=studentmethod.eligiblity;
+  return user;
+ };
+
+ console.table(addstudent("navin",20,"dilli","anna nagar","chennai"));
 
