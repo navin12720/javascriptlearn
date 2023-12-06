@@ -119,3 +119,21 @@ persons.sort((a, b) => {
   return 0;
 });
 console.table(persons);
+//-----------multiply way of clone a array-----------
+let arrayorginal=[1,2,3,4,5];
+//spread operator
+let clone=[...arrayorginal];
+console.log(clone);
+//slice()
+let clone2=arrayorginal.slice();
+console.log(clone2);
+//concat
+let clone3=[].concat(arrayorginal);
+console.log(clone3);
+//Array.from()
+let clone4=Array.from(arrayorginal);
+console.log(clone4);
+//json.parse(),json.stringify()
+let clone5=JSON.parse(JSON.stringify(arrayorginal));
+console.log(clone5);
+
