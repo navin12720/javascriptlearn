@@ -173,6 +173,5 @@ console.log(users.about());
   // user.eligiblity=studentmethod.eligiblity;
   return user;
  };
-
  console.table(addstudent("navin",20,"dilli","anna nagar","chennai"));
 
