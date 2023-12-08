@@ -175,3 +175,85 @@ console.log(users.about());
  };
  console.table(addstudent("navin",20,"dilli","anna nagar","chennai"));
 
+
+ //-----------creating objects--------
+ //1.using object literals:
+ const students={
+  name:"navin",
+  age:30,
+  job:"software developer"
+ };
+ console.log(students);
+ //2.using the object constructor:
+ const student2=new Object();
+ student2.name="navin1";
+ student2.age=31;
+ student2.job="developer";
+ console.log(student2);
+ //3.using the Object.create() method:
+//Object.create(prototype,propertiesObject);
+const  personproto={
+  sayhello:function(){
+    console.log(`Hello , My name is ${this.name}`);
+  }
+}
+const person1=Object.create(personproto);
+person1.name="Navin";
+person1.age=23;
+person1.job="developer";
+console.log(person1);
+person1.sayhello();
+
+//4.Using class
+class Personss{
+  constructor(name,age,job){
+    this.name=name;
+    this.age=age;
+    this.job=job;
+  }
+}
+const person3=new Personss("Navin",20,"software");
+console.log(person3);
+
+//iterating through js objects
+//using the for-in loop
+for(let key in student2){
+  console.log(`${key} : ${student2[key]}`);
+}
+//using Object.keys()
+const keys=Object.keys(student2);
+console.log(keys);
+keys.forEach(key=>{
+  console.log(`${key} : ${student2[key]}`);
+})
+//using Object.values()
+const values=Object.values(student2);
+console.log(values);
+values.forEach(value=>{
+  console.log(`value : ${value} `);
+})
+//using Object.entries()
+const entries=Object.entries(student2);
+console.log(entries);
+entries.forEach(entry=>{
+  console.log(`${entry[0]} : ${entry[1]}`);
+})
+ //normal loop
+
+ for(let i=0;i<entries.length;i++){
+  console.log(`${entries[i][0]} : ${entries[i][1]}`);
+ }
+
+ //diffence bwt rest parameter and spread operator
+//Rest parameter:
+function myfun(first,second,...rest){
+  console.log(first);
+  console.log(second);
+  console.log(rest);
+}
+myfun(10,20,30,40);
+
+//spread operator
+const myarray=[1,2,3];
+const spread=[...myarray,4,5,6];
+console.log(spread);
