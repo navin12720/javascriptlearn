@@ -257,3 +257,46 @@ myfun(10,20,30,40);
 const myarray=[1,2,3];
 const spread=[...myarray,4,5,6];
 console.log(spread);
+ //parameter destructing for objects
+ function hello({name,age}){
+  console.log(`hello ${name}!`);
+  console.log(`age is ${age}`);
+ }
+ hello(users);
+ //getter and setter
+ /* 1.create a class called circle
+ 2.Radius values a constructor
+ 3.Getter and setteer function called diameter
+ 4.Getter area()
+  */
+ class Circle{
+  constructor(radius){
+    this.radius= radius;
+  }
+  get diameter(){
+    return this.radius*2;
+  }
+  set diameter(diameter){
+    this.radius=diameter/2;
+  }
+  get area(){
+    return Math.PI*this.radius*this.radius;
+  }
+ }
+ const mycircle=new Circle(5);
+ console.log(mycircle.radius);
+ console.log(mycircle.diameter);
+ console.log(mycircle.area);
+ mycircle.diameter=12;
+ console.log(mycircle.radius);
+ console.log(mycircle.diameter);
+ console.log(mycircle.area);
+ //static method and property
+ class Myclass{
+  static mystaticpro="hiii";
+  static mystatic(){
+    console.log("hello navin");
+  }
+ }
+ Myclass.mystatic();
+ console.log(Myclass.mystaticpro);
